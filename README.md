@@ -42,9 +42,9 @@
 - 팀 전체 개발 환경을 표준화해 구성원 간 환경 차이로 발생하던 오류를 제거
 
 <p align="center">
-  <img src="./images/network-architecture.svg" alt="Docker Compose 기반 망 분리 네트워크 구성" width="85%">
+  <img src="./images/network-architecture.svg" alt="네트워크 구성" width="85%">
   <br>
-  <sub>Docker Compose로 구성한 DMZ·내부망·개발망 분리 구조와 자산 배치</sub>
+  <sub>네트워크 구조와 자산 배치</sub>
 </p>
 
 ---
