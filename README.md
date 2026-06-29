@@ -3,7 +3,7 @@
 > 실제 운영 환경에서 흔히 발견되는 보안 약점을 가진 레거시 E-commerce 서비스를 재현해 구축하고, CI/CD를 갖춘 운영 환경 위에서 공격자 관점의 블랙박스 진단을 수행한 프로젝트
 > * **개발 기간:** 2026.09.02 ~ 2026.09.15
 > * **개발 인원:** 4인
-> * **주요 역할:** React·Node.js 기반 서비스 구현, Docker Compose 기반 망 분리 및 CI/CD 인프라 구축(Jenkins·Gitea), SQL Injection 진단, 결과 보고서 작성
+> * **주요 역할:** React·Node.js 기반 서비스 구현, 망 분리 및 CI/CD 인프라 구축(Jenkins·Gitea), SQL Injection 진단, 결과 보고서 작성
 > * **사용 기술:** React·React Router, Node.js·Express, Socket.IO, MySQL 8.0·Sequelize, JWT, Docker·Docker Compose, Jenkins, Gitea, MITRE ATT&CK, DFD/STRIDE, Burp Suite, Postman
 > * **github:** https://github.com/jeshin119/autoever-security2-redteam
 > * **발표 자료:** [Google Slides](https://docs.google.com/presentation/d/1riU8wIi2z-_VI2-U1nVr8rti1VgtU9GIwHG_h8sCNA8/edit?usp=sharing)
@@ -36,15 +36,15 @@
 
 ### 2.2 네트워크 망 분리 및 CI/CD 인프라 구축
 
-- Docker Compose 다중 네트워크로 DMZ·내부망·개발망을 분리하고, 자산 간 연결과 구성을 설계. Backend가 DMZ와 내부망에 동시에 연결되는 피벗 구조로 배치해 실제 운영 환경의 네트워크 경계를 재현
+- 외부망·내부망·개발망을 분리하고 자산 간 연결과 구성을 설계. Backend(Node.js)가 외부망과 내부망을 잇는 피벗 구조로 배치해 실제 운영 환경의 네트워크 경계를 재현
 - 구형 OS로 구성된 기존 개발 서버 제약을 우회하기 위해 최신 Linux 기반 별도 개발 서버를 구성
 - Gitea로 소스 형상 관리를, Jenkins로 빌드–배포 파이프라인을 구축해 코드 통합부터 배포까지 자동화
 - 팀 전체 개발 환경을 표준화해 구성원 간 환경 차이로 발생하던 오류를 제거
 
 <p align="center">
-  <img src="./images/network-architecture.svg" alt="네트워크 구성" width="85%">
+  <img src="./images/network-architecture.png" alt="망 분리 네트워크 구성" width="85%">
   <br>
-  <sub>네트워크 구조와 자산 배치</sub>
+  <sub>외부망·내부망·개발망 분리 구조와 자산 배치</sub>
 </p>
 
 ---
